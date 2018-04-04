@@ -1,4 +1,6 @@
-# Plugin Commands Module for Craft 3
+# Plugin Commands for Craft 3
+
+This is intentionally not a plugin, it's a Yii Module :-)
 
 ## Install
 
@@ -23,9 +25,7 @@ return [
 ```
 
 
-```
-composer require ostark/craft-plugin-commands
-```
+
 
 ## Usage
 
