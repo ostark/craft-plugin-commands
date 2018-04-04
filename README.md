@@ -29,9 +29,24 @@ return [
 
 ## Usage
 
-Get a list plugins with status
+Get a list of all plugins
 ```
-./craft plugin/list 
+./craft plugin/list
+
+5 plugins found
+╔═══════════════════════════╤════════════╤═══════════════╤═══════════════╗
+║ Handle                    │ Version    │ Developer     │ Status        ║
+╟───────────────────────────┼────────────┼───────────────┼───────────────╢
+║ aws-s3                    │ 1.0.8      │ Pixel & Tonic │ Disabled      ║
+╟───────────────────────────┼────────────┼───────────────┼───────────────╢
+║ async-queue               │ 1.3.0      │ Oliver Stark  │ Enabled       ║
+╟───────────────────────────┼────────────┼───────────────┼───────────────╢
+║ fortrabbit-object-storage │ 0.1.0      │ Oliver Stark  │ Not installed ║
+╟───────────────────────────┼────────────┼───────────────┼───────────────╢
+║ happy-brad                │ v1.2       │ Matt Stauffer │ Enabled       ║
+╟───────────────────────────┼────────────┼───────────────┼───────────────╢
+║ upper                     │ 1.3.1      │ Oliver Stark  │ Not installed ║
+╚═══════════════════════════╧════════════╧═══════════════╧═══════════════╝
 ```
 
 Install & enable ALL or a single plugin
