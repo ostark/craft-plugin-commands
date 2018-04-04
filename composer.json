@@ -1,7 +1,7 @@
 {
   "name": "ostark/craft-plugin-commands",
   "description": "Manage Craft plugins from the cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "craft",
     "cms",
@@ -16,7 +16,6 @@
       "homepage": "https://www.fortrabbit.com"
     }
   ],
-  "type": "project",
   "support": {
     "email": "os@fortrabbit.com",
     "issues": "https://github.com/ostark/craft-plugin-commands/issues",
