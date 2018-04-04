@@ -1,0 +1,37 @@
+{
+  "name": "ostark/craft-plugin-commands",
+  "description": "Manage Craft plugins from the cli",
+  "version": "0.1.0",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "module",
+    "plugins"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oliver Stark",
+      "homepage": "https://www.fortrabbit.com"
+    }
+  ],
+  "type": "project",
+  "support": {
+    "email": "os@fortrabbit.com",
+    "issues": "https://github.com/ostark/craft-plugin-commands/issues",
+    "source": "https://github.com/ostark/craft-plugin-commands",
+    "docs": "https://github.com/ostark/craft-plugin-commands"
+  },
+  "require": {
+    "craftcms/cms": "^3.0.0-RC1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ostark\\PluginCommands\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
