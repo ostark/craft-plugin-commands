@@ -1,12 +1,13 @@
 {
   "name": "ostark/craft-plugin-commands",
   "description": "Manage Craft plugins from the cli",
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "type": "yii2-extension",
   "keywords": [
     "craft",
     "cms",
     "craftcms",
-    "module",
+    "yii2-extension",
     "plugins"
   ],
   "license": "MIT",
@@ -23,14 +24,14 @@
     "docs": "https://github.com/ostark/craft-plugin-commands"
   },
   "require": {
-    "craftcms/cms": "^3.0.0-RC1"
+    "craftcms/cms": "^3.0.0"
   },
   "autoload": {
     "psr-4": {
       "ostark\\PluginCommands\\": "src/"
     }
   },
-  "config": {
-    "optimize-autoloader": true
+  "extra": {
+    "bootstrap": "ostark\\PluginCommands\\BootstrapPluginCommands"
   }
 }

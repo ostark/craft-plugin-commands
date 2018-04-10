@@ -15,8 +15,6 @@ use yii\console\widgets\Table;
  */
 class Commands extends BaseConsoleController
 {
-
-
     public $defaultAction = 'list';
 
     protected $actionVerbMap = [

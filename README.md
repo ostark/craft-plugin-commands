@@ -1,6 +1,7 @@
 # Plugin Commands for Craft 3
 
-This is intentionally not a plugin, it's a Yii Module :-)
+This is intentionally not a plugin, it's a Yii Extension.
+There is not need to bootstrap or enable it, it auto-registers itself.
 
 ## Install
 
@@ -8,23 +9,6 @@ Require the package:
 ```
 composer require ostark/craft-plugin-commands
 ```
-
-Register the module in your `config/app.php`:
-```
-<?php
-return [    
-    'modules'    => [
-        'plugin-commands' => \ostark\PluginCommands\PluginCommandsModule::class
-
-    ],
-    'bootstrap' => [
-        'plugin-commands'        
-    ]
-];
-
-```
-
-
 
 
 ## Usage
