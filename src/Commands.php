@@ -146,6 +146,13 @@ class Commands extends BaseConsoleController
 
     }
 
+    /**
+     * Calls a method on craft\services\Plugins for multiple plugins
+     * and outputs a success/error message
+     *
+     * @param       $pluginAction
+     * @param array $handles
+     */
     protected function apply($pluginAction, $handles = [])
     {
         if (!in_array($pluginAction, array_keys($this->actionVerbMap))) {
