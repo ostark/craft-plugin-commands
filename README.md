@@ -64,8 +64,8 @@ This is useful with automated deployments and a shared `composer.json`:
 {
     "scripts": {        
         "post-install-cmd": [
-            "php craft plugin/disable gatekeepers --env-only=production",
-            "php craft plugin/enable gatekeepers --env-only=dev,staging"
+            "php craft plugin/disable gatekeeper --env-only=production",
+            "php craft plugin/enable gatekeeper --env-only=dev,staging"
         ]
     }
 }
