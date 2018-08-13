@@ -57,15 +57,15 @@ Enable ALL or a single plugin
 ./craft plugin/enable {plugin-handle}
 ```
 
-Limit execution to specific environments with the `--env-only` flag 
-This is useful with automated deployments and a shared `composer.json`:
+Limit execution to specific environments with the `--env-only` flag. 
+This option is only useful in a automated deployment processes, e.g. `post-install-cmd`s defined in a shared `composer.json`:
 
 ```
 {
     "scripts": {        
         "post-install-cmd": [
-            "php craft plugin/disable gatekeeper --env-only=production",
-            "php craft plugin/enable gatekeeper --env-only=dev,staging"
+            "php craft plugin/disable {plugin-handle} --env-only=production",
+            "php craft plugin/enable {plugin-handle} --env-only=dev,staging"
         ]
     }
 }
