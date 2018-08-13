@@ -17,12 +17,48 @@ class Commands extends BaseConsoleController
 {
     public $defaultAction = 'list';
 
+    /**
+     * @var string Limit execution to these environments, separate multiple with comma.
+     */
+    public $envOnly = null;
+
     protected $actionVerbMap = [
         'installPlugin'   => 'installed',
         'uninstallPlugin' => 'uninstalled',
         'enablePlugin'    => 'enabled',
         'disablePlugin'   => 'disabled'
     ];
+
+
+    public function options($actionID)
+    {
+        return ['envOnly'];
+    }
+
+    /**
+     * Before Action filter
+     *
+     * @param \yii\base\Action $action
+     *
+     * @return bool
+     */
+    public function beforeAction($action)
+    {
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+        if (!$this->environmentCheck($this->envOnly)) {
+            $currentEnv = Craft::$app->env;
+            $this->stdout("Skip command 'craft plugin/{$action->id}' - wrong env: '{$currentEnv}'" . PHP_EOL, Console::FG_YELLOW);
+
+            return false;
+        }
+
+        return true;
+
+    }
+
 
     /**
      * List all plugins
@@ -179,6 +215,30 @@ class Commands extends BaseConsoleController
 
             $this->stdout("> {$verb} {$handleBold} successfully" . PHP_EOL, Console::FG_GREEN);
         }
+    }
+
+
+    /**
+     * @param string|null $allowedEnvironment
+     *
+     * @return bool
+     */
+    protected function environmentCheck(string $allowedEnvironment = null)
+    {
+        // No env limitations, continue
+        if (is_null($allowedEnvironment) || strlen($allowedEnvironment) == 0) {
+            return true;
+        }
+
+        $allowedEnvs = array_map('trim', explode(',', $allowedEnvironment));
+
+        // No match
+        if (!in_array(Craft::$app->env, $allowedEnvs)) {
+            return false;
+        }
+
+        // Match, continue
+        return true;
 
     }
 
