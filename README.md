@@ -6,14 +6,15 @@ There is not need to bootstrap or enable it, it auto-registers itself.
 ## Install
 
 Require the package:
-```
+
+```sh
 composer require ostark/craft-plugin-commands
 ```
-
 
 ## Usage
 
 Get a list of all plugins
+
 ```
 ./craft plugin/list
 
@@ -34,39 +35,42 @@ Get a list of all plugins
 ```
 
 Install & enable ALL or a single plugin
+
 ```
 ./craft plugin/install ALL
 ./craft plugin/install {plugin-handle}
 ```
 
 Uninstall  ALL or a single plugin
+
 ```
 ./craft plugin/uninstall ALL
 ./craft plugin/uninstall {plugin-handle}
 ```
 
 Disable ALL or a single plugin
+
 ```
 ./craft plugin/disable ALL
 ./craft plugin/disable {plugin-handle}
 ```
 
 Enable ALL or a single plugin
+
 ```
 ./craft plugin/enable ALL
 ./craft plugin/enable {plugin-handle}
 ```
 
 Limit execution to specific environments with the `--env-only` flag. 
-This option is only useful in a automated deployment processes, e.g. `post-install-cmd`s defined in a shared `composer.json`:
+This option is only useful in automated deployment processes, e.g. `post-install-cmd`s defined in a shared `composer.json`:
 
-```
+```json
 {
-    "scripts": {        
+    "scripts": {
         "post-install-cmd": [
             "php craft plugin/disable {plugin-handle} --env-only=production",
             "php craft plugin/enable {plugin-handle} --env-only=dev,staging"
         ]
     }
 }
-
