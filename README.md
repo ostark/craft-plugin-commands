@@ -37,29 +37,29 @@ Get a list of all plugins
 Install & enable ALL or a single plugin
 
 ```
-./craft plugin/install ALL
-./craft plugin/install {plugin-handle}
+php craft plugin/install ALL
+php craft plugin/install {plugin-handle}
 ```
 
 Uninstall  ALL or a single plugin
 
 ```
-./craft plugin/uninstall ALL
-./craft plugin/uninstall {plugin-handle}
+php craft plugin/uninstall ALL
+php craft plugin/uninstall {plugin-handle}
 ```
 
 Disable ALL or a single plugin
 
 ```
-./craft plugin/disable ALL
-./craft plugin/disable {plugin-handle}
+php craft plugin/disable ALL
+php craft plugin/disable {plugin-handle}
 ```
 
 Enable ALL or a single plugin
 
 ```
-./craft plugin/enable ALL
-./craft plugin/enable {plugin-handle}
+php craft plugin/enable ALL
+php craft plugin/enable {plugin-handle}
 ```
 
 Limit execution to specific environments with the `--env-only` flag. 
