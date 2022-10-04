@@ -175,7 +175,7 @@ class Commands extends BaseConsoleController
         }
 
         foreach ($filters as $key => $value) {
-            $plugins = ArrayHelper::filterByValue($plugins, $key, $value);
+            $plugins = ArrayHelper::where($plugins, $key, $value);
         }
 
         return array_keys($plugins);
